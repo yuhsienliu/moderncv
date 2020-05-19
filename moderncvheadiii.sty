@@ -86,8 +86,8 @@
     \if@details{%
       \addressfont\color{color2}%
       \ifthenelse{\isundefined{\@addressstreet}}{}{\addtomakeheaddetails{\addresssymbol\@addressstreet}%
-        \ifthenelse{\equal{\@addresscity}{}}{}{\addtomakeheaddetails[~--~]{\@addresscity}}% if \addresstreet is defined, \addresscity and \addresscountry will always be defined but could be empty
-        \ifthenelse{\equal{\@addresscountry}{}}{}{\addtomakeheaddetails[~--~]{\@addresscountry}}%
+        \ifthenelse{\equal{\@addresscity}{}}{}{\addtomakeheaddetails[~~]{\@addresscity}}% if \addresstreet is defined, \addresscity and \addresscountry will always be defined but could be empty
+        \ifthenelse{\equal{\@addresscountry}{}}{}{\addtomakeheaddetails[~~]{\@addresscountry}}%
         \flushmakeheaddetails\@firstmakeheaddetailselementtrue\\\null}%
       \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
         \addtomakeheaddetails{\csname\collectionloopkey phonesymbol\endcsname\collectionloopitem}}%
@@ -129,9 +129,25 @@
 \renewcommand*{\makeletterhead}{%
   % recompute lengths (in case we are switching from letter to resume, or vice versa)
   \recomputeletterlengths%
-  % sender block
-  \makehead%
-  \par%
+
+%   % sender block
+%   \makehead%
+%   \par%
+  
+  % sender contact info
+  \hfill%
+  \begin{minipage}{.5\textwidth}%
+    % optional detailed information
+    \if@details%
+      \raggedleft%
+      \addressfont\textcolor{color2}{%
+        {\bfseries\upshape\@firstname~\@lastname}\@firstdetailselementfalse%
+        % optional detailed information
+        \ifthenelse{\isundefined{\@addressstreet}}{}{\makenewline\addresssymbol\@addressstreet%
+          \ifthenelse{\equal{\@addresscity}{}}{}{\makenewline\@addresscity}% if \addresstreet is defined, \addresscity and addresscountry will always be defined but could be empty
+          \ifthenelse{\equal{\@addresscountry}{}}{}{\makenewline\@addresscountry}} }\fi%
+    \end{minipage}\\[1em]
+  
    % recipient block
   \begin{minipage}[t]{.5\textwidth}
     \raggedright%
@@ -145,11 +161,12 @@
   \@date\\[2em]% US informal style: "January 1, 1900"; UK formal style: "01/01/1900"
   % opening
   \raggedright%
+  {\bfseries\@subject\\[1.5em]}%
   \@opening\\[1.5em]%
   % ensure no extra spacing after \makelettertitle due to a possible blank line
 %  \ignorespacesafterend% not working
   \hspace{0pt}\par\vspace{-\baselineskip}\vspace{-\parskip}}
-
+  
 
 \endinput
 

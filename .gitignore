@@ -1,0 +1,13 @@
+# auxiliary files
+.log
+.out
+.synctex.gz
+.xdv
+.fls
+.fdb_latexmk
+.blg
+.bbl
+.aux
+
+# folders
+examples/*

@@ -191,7 +191,16 @@
 % compatibility package with older versions of moderncv
 \RequirePackageWithOptions{moderncvcompatibility}
 
-\RequirePackage{l3regex}
+
+
+% \RequirePackage{l3regex}
+\usepackage{expl3}
+\expandafter\def\csname ver@l3regex.sty\endcsname{}
+
+
+\usepackage{tikz}
+
+
 
 %-------------------------------------------------------------------------------
 %                class definition
@@ -298,7 +307,7 @@
 
 % other symbols
 \newcommand*{\listitemsymbol}      {\labelitemi~}
-\newcommand*{\addresssymbol}       {}
+\newcommand*{\addresssymbol}       {\faMapMarker}
 \newcommand*{\mobilephonesymbol}   {}
 \newcommand*{\fixedphonesymbol}    {}
 \newcommand*{\faxphonesymbol}      {}
@@ -690,6 +699,7 @@
 \newcommand*{\recipient}[2]{\def\@recipientname{#1}\def\@recipientaddress{#2}}
 \renewcommand*{\date}[1]{\def\@date{#1}}\date{\today}
 \newcommand*{\opening}[1]{\def\@opening{#1}}
+\newcommand*{\subject}[1]{\def\@subject{#1}}
 \newcommand*{\closing}[1]{\def\@closing{#1}}
 \newcommand*{\enclosure}[2][]{%
   % if an optional argument is provided, use it to redefine \enclname
@@ -716,6 +726,13 @@
 % makes the letter closing
 % usage: \makeletterclosing
 \newcommand*{\makeletterclosing}{}
+
+\newcommand{\cvskill}[2]{%
+\textcolor{color3}{{#1}}\hfill
+\foreach \x in {1,...,5}{%
+  \space{\ifnumgreater{\x}{#2}{\color{color1!30}}{\color{color2}}\faCircle}}\par%
+}
+
 
 
 \endinput

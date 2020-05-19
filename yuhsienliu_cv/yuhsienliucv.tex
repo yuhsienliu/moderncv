@@ -1,0 +1,286 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[12pt,a4paper,roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{black}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+\moderncvicons{awesome}
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage{times}
+% use two columns
+\usepackage{multicol}
+
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+\usepackage[OT1]{fontenc} 
+
+
+
+% adjust the page margins
+\usepackage[margin=1in]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% random textx
+\usepackage{lipsum}
+
+
+% personal data
+\name{Yu-Hsien}{Liu}
+\title{Data Scientist}                               % optional, remove / comment the line if not wanted
+%  \address{19 Mattamy Place}{Ottawa Ontario}{K2G6J9}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+1~(613)~890~6260}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+% \phone[fixed]{+2~(345)~678~901}
+% \phone[fax]{+3~(456)~789~012}
+\email{liu.yuhsien81@gmail.com}                               % optional, remove / comment the line if not wanted
+\homepage{yuhsienliu.github.io}                         % optional, remove / comment the line if not wanted
+\social[linkedin]{yuhsienliu}                        % optional, remove / comment the line if not wanted
+% \social[xing]{john\_doe}                           % optional, remove / comment the line if not wanted
+% \social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
+\social[github]{yuhsienliu}                              % optional, remove / comment the line if not wanted
+% \social[gitlab]{jdoe}                              % optional, remove / comment the line if not wanted
+% \social[skype]{jdoe}                               % optional, remove / comment the line if not wanted
+% \extrainfo{\faMapMarker \, Ottawa Ontario}                 % optional, remove / comment the line if not wanted
+% \photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \quote{Learn to know what you don't know}                                 % optional, remove / comment the line if not wanted
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+
+% \makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+% \renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+%   to redefine the bibliography heading string ("Publications")
+% \renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+
+
+
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\vspace*{-10mm}
+
+\section{Technical Skills}
+\cvitem{Programming languages}{Python, R, Matlab, C/C++, Java}
+% \cvitem{UI}{CSS, HTML, JavaScript}
+\cvitem{Cloud solutions}{Azure, AWS}
+\cvitem{Database}{MySQL, ElasticSearch}
+\cvitem{Version control tools}{Git, SVN, Docker}
+\cvitem{Visualization tools}{Tableau, matplotlib, pandas, ggplot2}
+\cvitem{Technical writing}{\LaTeX, Markdown}
+
+
+\vspace*{-5mm}
+
+% \section{Qualifications}
+% \cvitem{%\faKey \, 
+% Strong grasp of OOP languages to \emph{git} things done}{
+% \begin{itemize}
+%     \item Native Python and R speaker. Also a functional Java speaker
+%     \item Technical team player with the Docker and version control tools to quickly dive into any projects
+% \end{itemize}
+% }
+% \cvitem{%\faDatabase \, 
+% Experienced with Big Data and Machine Learning solutions}{
+% \begin{itemize}
+%     \item Large scale (> 2 million records) full stack operations on the Labour Market Program Data Platform (LMPDP)  
+%     \item Passionate about the development and implementation of new data products and major product enhancements
+%     \item Proficient in Data warehouse with Azure-blobs and VMs to incorporate cloud computing and storage 
+% \end{itemize}
+% }
+% \cvitem{%\faInfoCircle \, 
+% Effective communications}{
+% \begin{itemize}
+%     \item Developed analytic plans and proposals to provide alternatives to official statistics
+%     \item Delivered diverse interactive data visualizations with Tableau, Bokeh and Plotly
+% \end{itemize}
+% }
+
+%%                PROFESSIONAL EXPERIENCES
+
+\section{Professional Experiences}
+\cventry{2019--Present}{Employment and Social Development Canada}{Analyst}{}{Ottawa -- Gatineau}{}
+\begin{itemize}
+    \item Evaluated heterogeneous treatment effects with causal machine learning forests at the individual, group and overall levels
+    \item Presented on the uses of Machine Learning for labour market program evaluation, which involved a review of the methodological literature, data preparation, and analysis
+    \item Effectively transformed numerical results into intuitive graphics and concise descriptions in evaluation reports and presentations
+\end{itemize}
+\smallskip
+\faBook \, \textbf{Project: Horizontal 3\textsuperscript{rd} Cycle Evaluation of the Labour Market Development Agreements}
+\begin{itemize}
+    \item[]\begin{itemize}
+        \item Successfully implemented Machine Learning techniques to build alternative comparison groups for evaluating the effectiveness of labour programs (e.g. Career Focus, Gender-Based Employability Skills and the Aboriginal Skills Employment Training Strategy)
+        \item Produced in- and post-program outcome estimates, such as employment insurance benefits and social assistance dependence, for individuals participating in labour programs
+        \end{itemize}
+\end{itemize}
+%}
+\bigskip
+\cventry{2016--2019}{Bank of Canada}{Research Assistant}{}{Ottawa ON}{}
+\begin{itemize}
+    \item Successfully launched pilot stages of implementing new applications, including visualization software, cloud computation services, and Azure Virtual Machines)
+    \item Succinctly summarized recommendations and advice on research methodologies from technical and non-technical audience 
+    \item Efficiently extracted, transformed, and loaded information from unstructured web-scraped textual data into pipelines
+\end{itemize}
+\smallskip
+\faBook \, \textbf{Project 1: Can Media and Text Analytics Provide Insights into Labour Market Conditions in China?}
+\begin{itemize}
+    \item[]\begin{itemize}
+        \item Creatively operationalized a novel alternative labour market conditions indicator with predictive power was built and verified with statistical, Machine Learning, and time-series econometric techniques
+        \item Carefully Validated the usefulness of proposed index was validated by conducting rolling macroeconomic time series, regression and sentiment analysis
+    \end{itemize}
+\end{itemize}
+\smallskip
+\faBook \, \textbf{Project 2: Understanding and Predicting Chinese Monetary Policy}
+\begin{itemize}
+    \item[]\begin{itemize}
+        \item Analytically created a Chinese monetary stance index by analyzing unstructured textual data from both official statements from the government and commercial news articles
+        \item Skillfully engaged and articulated research findings to audience at internal and external workshops, conferences, and seminars
+    \end{itemize}
+\end{itemize}
+%}
+
+% \section{Master thesis}
+% \cvitem{title}{\emph{Title}}
+% \cvitem{supervisors}{Supervisors}
+% \cvitem{description}{Short thesis abstract}
+
+%                PUBLICATIONS
+
+\nocite{*}
+\bibliographystyle{abbrv}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+
+
+
+%                CONFERENCES
+
+\section{Projects}
+\cventry{2019}{Carleton University}{Face Recognition and Gender Classification with K-Nearest Neighbours (KNN)}{Python}{Ottawa ON}{
+I constructed facial recognition programs with KNN algorithm from scratch to identify the names and gendors of actors/actresses in a subset of the FaceScrub dataset.}
+\cventry{2018}{National Research Council Canada}{Space Weather Forecast}{Python -- Tensorflow}{Ottawa ON}{
+I forecasted observational matrices of magnetograms, the Sun’s magnetic field’s strength and location, with a cGAN model. 
+}
+
+
+\section{Conferences}
+\cventry{2019}{Banf BC}{53\textsuperscript{rd} Annual Canadian Economics Association Conference}{}{}{
+Bank of Canada: Textual Analysis of Central Bank Communications / Banque du Canada : Analyse textuelle des communications de la banque centrale
+}
+\cventry{2018}{Montreal QC}{52\textsuperscript{nd} Annual Canadian Economics Association Conference}{}{}{
+Bank of Canada: Big Data and Machine Learning / Banque du Canada : Mégadonnées et apprentissage automatique
+}
+
+
+%%                EDUCATION
+\section{Education}
+\cventry{2018 - 2019}{Carleton University}{Master's of Data Science and Economics}{}{Ottawa ON}{
+% Courses: ML algorithms, data science, econometrics, research methods, financial time series
+}
+\cventry{2013 - 2017}{University of Ottawa}{Joint Honours Bachelor's in Mathematics and Economics}{}{Ottawa ON}{
+% Courses: modelling disease ecology, regression analysis, ultra-high dimensional space, sampling methodology
+}
+
+
+
+
+
+
+
+%                CERTIFICATES
+
+% \section{Certificates}
+% \cventry{2019}{Doussou}{Formation Python pour la Science des données}{Gatineau QC}{}{
+% Prendre en main et écrire du code python, connaître les modules standards, utiliser les principales libraries de calcul numérique dont Numpy, Pandas et Matplotlib, cueillir des données sur un API Web}
+% \smallskip
+% \cventry{2017}{John Hopkins University}{The Data Scientist’s Toolbox}{Coursera}{}{
+% Conceptual introduction to the ideas behind turning data into actionable knowledge and to the tools that will be used in the program like version control, markdown, git, GitHub, R, and RStudio}
+
+
+
+%                REFERENCES
+% \section{References}
+
+% \noindent
+% \begin{minipage}[t]{0.55\textwidth}
+% \raggedright
+% \section{References}
+% \textbf{Mohamed (Andy) Handouyahia\\}
+% \textit{Manager of Methodology Team\\}
+% \faAt \, Employment and Social Development Canada\\
+% \faEnvelope \, \href{mailto:andy.handouyahia@hrsdc-rhdcc.gc.ca}{andy.handouyahia@hrsdc-rhdcc.gc.ca}\\
+% \medskip
+% \textbf{Xinfen Han\\}
+% \textit{Data Scientist at Financial Markets Department\\}
+% \faAt \, Bank of Canada \\
+% \faEnvelope \, \href{mailto:xhan@bankofcanada.ca}{xhan@bankofcanada.ca} \\
+
+% \end{minipage}  
+% \hfill
+% \begin{minipage}[t]{0.44\textwidth}
+% \raggedright
+
+% \end{minipage}
+
+
+% \section{Extra 1}
+% \cvlistitem{Item 1}
+% \cvlistitem{Item 2}
+% \cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
+
+% \section{Extra 2}
+% \cvlistdoubleitem{Item 1}{Item 4}
+
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels:
+% \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+
+
+
+
+% \nocite{*}
+% \bibliographystyle{abbrv}
+% \bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+
+
+
+
+% Publications from a BibTeX file using the multibib package
+% \section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+\clearpage
+
+
+%-----       letter       ---------------------------------------------------------
+
+% \input{cover_letter}
+
+\end{document}
+
+
+%% end of file `template.tex'.

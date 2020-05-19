@@ -6,125 +6,150 @@
 % available at http://www.latex-project.org/lppl/.
 
 
-\documentclass[11pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[11pt,a4paper,roman]{moderncv} % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper' , 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
-% moderncv 主题
-\moderncvstyle{casual}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
-\moderncvcolor{blue}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
-%\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
+% moderncv 主題
+\moderncvicons{awesome}
 
-% 字符编码
-\usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
+\moderncvstyle{banking} % 選項參數是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
+\moderncvcolor{black} % 選項參數是 ‘blue’ (默認)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
+\nopagenumbers{} % 消除註釋以取消自動頁碼生成功能
+
+% 字符編碼
+\usepackage[utf8]{inputenc} % 替換你正在使用的編碼
 \usepackage{CJKutf8}
 
-% 调整页边距
+% 調整頁邊距
 \usepackage[scale=0.75]{geometry}
-%\setlength{\hintscolumnwidth}{3cm}           % 如果你希望改变日期栏的宽度
+%\setlength{\hintscolumnwidth}{3cm} % 如果你希望改變日期欄的寬度
 
-% 个人信息
-\name{小龙}{李}
-\title{简历题目 (可选项)}                     % 可选项、如不需要可删除本行
-\address{街道及门牌号}{邮编及城市}            % 可选项、如不需要可删除本行
-\phone[mobile]{+1~(234)~567~890}              % 可选项、如不需要可删除本行
-\phone[fixed]{+2~(345)~678~901}               % 可选项、如不需要可删除本行
-\phone[fax]{+3~(456)~789~012}                 % 可选项、如不需要可删除本行
-\email{xiaolong@li.com.cn}                    % 可选项、如不需要可删除本行
-\homepage{www.xialongli.com}                  % 可选项、如不需要可删除本行
-\extrainfo{附加信息 (可选项)}                 % 可选项、如不需要可删除本行
-\photo[64pt][0.4pt]{picture}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
-\quote{引言(可选项)}                          % 可选项、如不需要可删除本行
+% 個人信息
+\name{}{劉昱嫻}
+\title{資料科學家} % 可選項、如不需要可刪除本行
+\address{莊敬路361號4樓}{110 台北市} % 可選項、如不需要可刪除本行
+\phone[mobile]{+1~(234)~567~890} % 可選項、如不需要可刪除本行
+\phone[fixed]{+2~(345)~678~901} % 可選項、如不需要可刪除本行
+\phone[fax]{+3~(456)~789~012} % 可選項、如不需要可刪除本行
+\email{xiaolong@li.com.cn} % 可選項、如不需要可刪除本行
+\homepage{www.xialongli.com} % 可選項、如不需要可刪除本行
+% \extrainfo{附加信息 (可選項)} % 可選項、如不需要可刪除本行
+% \photo[64pt][0.4pt]{picture} % '64pt'是圖片必須壓縮至的高度、'0.4pt'是圖片邊框的寬度(如不需要可調節至0pt)、'picture' 是圖片文件的名字;可選項、如不需要可刪除本行
+% \quote{引言(可選項)} % 可選項、如不需要可刪除本行
 
-% 显示索引号;仅用于在简历中使用了引言
+% 顯示索引號;僅用於在簡歷中使用了引言
 %\makeatletter
 %\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
 %\makeatother
 
-% 分类索引
+% 分類索引
 %\usepackage{multibib}
 %\newcites{book,misc}{{Books},{Others}}
-%----------------------------------------------------------------------------------
-%            内容
-%----------------------------------------------------------------------------------
+%------------------------------------------------- ---------------------------------
+% 內容
+%------------------------------------------------- ---------------------------------
 \begin{document}
-\begin{CJK}{UTF8}{gbsn}                       % 详情参阅CJK文件包
+\begin{CJK*}{UTF8}{bkai} % 詳情參閱CJK文件包
 \maketitle
 
+\section{資格}
+\cvitem {\faKey \, \emph {git}到OOP語言的掌握能} {}
+\begin{itemize}
+    \item本機Python和R揚聲器。也是功能強大的Java發言人
+    \item具有Docker和版本控制工具的技術團隊成員，可快速投入任何項目
+\end{itemize}
+
+\cvitem {\faDatabase \, 具有大數據和機器學習解決方案的經驗} {
+\begin{itemize}
+    \item 在勞動力市場計劃數據平台（LMPDP）上的大規模（> 200萬條記錄）全棧操作
+    \item 對新數據產品的開發和實施以及主要產品的增強充滿熱情
+    \item 精通具有Azure-blob和VM的數據倉庫，以整合雲計算和存儲
+\end {itemize}
+}
+\cvitem{\faInfoCircle \, 有效溝通} {}
+\begin{itemize}
+    \item 制定分析計劃和建議以提供官方統計數據的替代方法
+    \item 使用Tableau，Bokeh和Plotly提供了多種交互式數據可視化
+\end{itemize}
+
+% \section{畢業論文}
+% \cvitem{題目}{\emph{題目}}
+% \cvitem{導師}{導師}
+% \cvitem{說明}{\small 論文簡介}
+
+\section{計算機技能}
+\cvskill{Python, R, Git, Markdown}{5}
+\cvskill{Matlab, Tableau, Latex}{3}
+\cvskill{Shell scripting, Java, SAS}{2}
+
 \section{教育背景}
-\cventry{年 -- 年}{学位}{院校}{城市}{\textit{成绩}}{说明}  % 第3到第6编码可留白
-\cventry{年 -- 年}{学位}{院校}{城市}{\textit{成绩}}{说明}
+\cventry{2018年 -- 2019年}{\textbf{經濟與資料科學 碩士}}{卡爾頓大學}{加拿大渥太華}{}{說明} % 第3到第6編碼可留白
+\cventry{2013年 -- 2017年}{數學與經濟 學士}{渥太華大學}{加拿大渥太華}{}{說明}
 
-\section{毕业论文}
-\cvitem{题目}{\emph{题目}}
-\cvitem{导师}{导师}
-\cvitem{说明}{\small 论文简介}
-
-\section{工作背景}
-\subsection{专业}
-\cventry{年 -- 年}{职位}{公司}{城市}{}{不超过1--2行的概况说明\newline{}%
-工作内容:%
+\section{工作經驗}
+\subsection{專業}
+\cventry{2019年 -- 現在}{職位}{公司}{加拿大\,渥太華}{}{不超過1--2行的概況說明\newline{}%
+工作內容:%
 \begin{itemize}%
-\item 工作内容 1;
-\item 工作内容 2、 含二级内容:
-  \begin{itemize}%
-  \item 二级内容 (a);
-  \item 二级内容 (b)、含三级内容 (不建议使用);
-    \begin{itemize}
-    \item 三级内容 i;
-    \item 三级内容 ii;
-    \item 三级内容 iii;
-    \end{itemize}
-  \item 二级内容 (c);
-  \end{itemize}
-\item 工作内容 3。
+\item 工作內容 1;
+\item 工作內容 2、 含二級內容:
+  \begin{itemize}%
+  \item 二級內容 (a);
+  \item 二級內容 (b)、含三級內容 (不建議使用);
+    \begin{itemize}
+    \item 三級內容 i;
+    \item 三級內容 ii;
+    \item 三級內容 iii;
+    \end{itemize}
+  \item 二級內容 (c);
+  \end{itemize}
+\item 工作內容 3。
 \end{itemize}}
-\cventry{年 -- 年}{职位}{公司}{城市}{}{说明行1\newline{}说明行2}
+\cventry{年 -- 年}{職位}{公司}{城市}{}{說明行1\newline{}說明行2}
 \subsection{其他}
-\cventry{年 -- 年}{职位}{公司}{城市}{}{说明}
+\cventry{2019年}{職位}{公司}{城市}{}{說明}
 
-\section{语言技能}
-\cvitemwithcomment{语言 1}{水平}{评价}
-\cvitemwithcomment{语言 2}{水平}{评价}
-\cvitemwithcomment{语言 3}{水平}{评价}
+\section{語言}
+\cvskill{英文}{5}
+\cvskill{中文}{5}
+\cvskill{法文}{1}
 
-\section{计算机技能}
-\cvdoubleitem{类别 1}{XXX, YYY, ZZZ}{类别 4}{XXX, YYY, ZZZ}
-\cvdoubleitem{类别 2}{XXX, YYY, ZZZ}{类别 5}{XXX, YYY, ZZZ}
-\cvdoubleitem{类别 3}{XXX, YYY, ZZZ}{类别 6}{XXX, YYY, ZZZ}
 
-\section{个人兴趣}
-\cvitem{爱好 1}{\small 说明}
-\cvitem{爱好 2}{\small 说明}
-\cvitem{爱好 3}{\small 说明}
 
-\section{其他 1}
-\cvlistitem{项目 1}
-\cvlistitem{项目 2}
-\cvlistitem{项目 3}
+% \section{個人興趣}
+% \cvitem{愛好 1}{\small 說明}
+% \cvitem{愛好 2}{\small 說明}
+% \cvitem{愛好 3}{\small 說明}
 
-\renewcommand{\listitemsymbol}{-}             % 改变列表符号
+% \section{其他 1}
+% \cvlistitem{項目 1}
+% \cvlistitem{項目 2}
+% \cvlistitem{項目 3}
 
-\section{其他 2}
-\cvlistdoubleitem{项目 1}{项目 4}
-\cvlistdoubleitem{项目 2}{项目 5\cite{book1}}
-\cvlistdoubleitem{项目 3}{}
+% \renewcommand{\listitemsymbol}{-} % 改變列表符號
 
-% 来自BibTeX文件但不使用multibib包的出版物
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
+% \section{其他 2}
+% \cvlistdoubleitem{項目 1}{項目 4}
+% \cvlistdoubleitem{項目 2}{項目 5\cite{book1}}
+% \cvlistdoubleitem{項目 3}{}
+
+% 來自BibTeX文件但不使用multibib包的出版物
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的數字標籤
 \nocite{*}
 \bibliographystyle{plain}
-\bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
+\bibliography{publications} % 'publications' 是BibTeX文件的文件名
 
-% 来自BibTeX文件并使用multibib包的出版物
+% 來自BibTeX文件並使用multibib包的出版物
 %\section{出版物}
 %\nocitebook{book1,book2}
 %\bibliographystylebook{plain}
-%\bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
+%\bibliographybook{publications} % 'publications' 是BibTeX文件的文件名
 %\nocitemisc{misc1,misc2,misc3}
 %\bibliographystylemisc{plain}
-%\bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
+%\bibliographymisc{publications} % 'publications' 是BibTeX文件的文件名
 
-\clearpage\end{CJK}
+\clearpage
+\end{CJK*}
 \end{document}
 
 
-%% 文件结尾 `template-zh.tex'.
+%% 文件結尾 `template-zh.tex'.
