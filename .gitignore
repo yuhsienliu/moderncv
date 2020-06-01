@@ -1,13 +1,15 @@
 # auxiliary files
-.log
-.out
-.synctex.gz
-.xdv
-.fls
-.fdb_latexmk
-.blg
-.bbl
-.aux
+*.log
+*.out
+*.synctex.gz
+*.xdv
+*.fls
+*.fdb_latexmk
+*.bbl
+*.aux
 
 # folders
 examples/*
+
+# microsoft tmp files
+[~][$]*
