@@ -24,19 +24,42 @@
 \usepackage[OT1]{fontenc} 
 
 
-
-% adjust the page margins
-\usepackage[margin=1in]{geometry}
+% adjust the page margins 
+\usepackage[top=0.1in, margin=0.5in]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % random textx
 \usepackage{lipsum}
 
+\usepackage{fancyhdr} % Not required here as it is used by moderncv anyway
+\fancypagestyle{first}{%
+\cfoot{}
+}
+
+
+
+% move up CV title
+\usepackage{etoolbox}
+% \patchcmd{\makecvtitle}{{minipage}[b]}{{minipage}[t]}{}{}
+% \patchcmd{\makecvtitle}{{tabular}[b]}{{tabular}}{}{}
+
+\renewcommand*{\namefont}{\fontsize{35}{35}\mdseries\upshape}
+\renewcommand*{\titlefont}{\fontsize{30}{30}\mdseries\upshape}
+\renewcommand*{\addressfont}{\large\mdseries}
+
+\patchcmd{\recomputecvlengths}{%
+  \setlength{\makecvheadnamewidth}{\textwidth}%
+}{%
+  \setlength{\makecvheadnamewidth}{\textwidth}%
+}{}{}
+
+
 
 % personal data
-\name{Yu-Hsien}{Liu}
-\title{Data Scientist}                               % optional, remove / comment the line if not wanted
+
+\name{\textbf{Yu-Hsien}}{\textbf{Liu}}
+\title{Data Scientist\vspace*{15pt}}                               % optional, remove / comment the line if not wanted
 %  \address{19 Mattamy Place}{Ottawa Ontario}{K2G6J9}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
 \phone[mobile]{+1~(613)~890~6260}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
 % \phone[fixed]{+2~(345)~678~901}
@@ -72,88 +95,130 @@
 
 
 %-----       resume       ---------------------------------------------------------
+% TODO: PUSH TITLE UP 
+% TODO: INCREASE THE FONT SIZE OF MY NAME
+% TODO: truncated second line to one line
+
 \makecvtitle
+
+
 
 \vspace*{-10mm}
 
+
 \section{Technical Skills}
-\cvitem{Programming languages}{Python, R, Matlab, C/C++, Java}
+\cvitem{Programming languages}{Python, R, Matlab, Java}
 % \cvitem{UI}{CSS, HTML, JavaScript}
-\cvitem{Cloud solutions}{Azure, AWS}
-\cvitem{Database}{MySQL, ElasticSearch}
+\cvitem{Cloud SaaS}{Azure, AWS}
+\cvitem{Database}{MySQL, ElasticSearch, Hadoop HDFS}
 \cvitem{Version control tools}{Git, SVN, Docker}
-\cvitem{Visualization tools}{Tableau, matplotlib, pandas, ggplot2}
+\cvitem{Visualization tools}{Tableau, Plotly, bokeh, matplotlib, ggplot2}
 \cvitem{Technical writing}{\LaTeX, Markdown}
 
 
-\vspace*{-5mm}
+% \vspace*{-5mm}
+\renewcommand{\labelitemi}{\textbullet}
 
-% \section{Qualifications}
+
+\section{Qualifications}
 % \cvitem{%\faKey \, 
-% Strong grasp of OOP languages to \emph{git} things done}{
+% Strong grasp of scientific programming languages}{
 % \begin{itemize}
-%     \item Native Python and R speaker. Also a functional Java speaker
-%     \item Technical team player with the Docker and version control tools to quickly dive into any projects
+%     % \item Native Python and R speaker. Also a functional Java speaker.
+%     \item Strong technical skills and team player with collaboration and version control tools to quickly dive into any projects
 % \end{itemize}
 % }
-% \cvitem{%\faDatabase \, 
-% Experienced with Big Data and Machine Learning solutions}{
-% \begin{itemize}
-%     \item Large scale (> 2 million records) full stack operations on the Labour Market Program Data Platform (LMPDP)  
-%     \item Passionate about the development and implementation of new data products and major product enhancements
-%     \item Proficient in Data warehouse with Azure-blobs and VMs to incorporate cloud computing and storage 
-% \end{itemize}
-% }
-% \cvitem{%\faInfoCircle \, 
-% Effective communications}{
-% \begin{itemize}
-%     \item Developed analytic plans and proposals to provide alternatives to official statistics
-%     \item Delivered diverse interactive data visualizations with Tableau, Bokeh and Plotly
-% \end{itemize}
-% }
+\medskip
+\cvitem{%\faDatabase \, 
+Led data science projects, applied sophisticated analytics techniques at every stage}{
+\begin{itemize}
+    \item Action-oriented and focused on building analytical solutions that enhance the departmental market operations, policy analyses and research
+    \item Grasped the essence of policy and technical issues and developed concepts, models and frameworks
+    \item Experienced in extraction, cleaning and validation of data, data exploration, design and evaluation of models
+\end{itemize}
+}
+
+\medskip
+
+
+\cvitem{%\faDatabase \, 
+Significant experience with big data analytics, machine learning and varied data resources}{
+\begin{itemize}
+    \item Advanced knowledge in HDFS to leverage from a variety of internal and external sources
+    \item Assisted in building large scale full stack operations on the Labour Market Program Data Platform
+    \item Worked on a relational database that combines CRA earning information and ESDC EI records
+    % \item Proficient in data warehousing with Azure to incorporate cloud computing and storage 
+\end{itemize}
+}
+
+\medskip
+
+\cvitem{%\faInfoCircle \, 
+Effective communication}{
+\begin{itemize}
+    \item Possesses strong interpersonal skills and enjoys working in an innovative team environment
+    \item Motivated to exploit state-of-the-art means to develop tools and services
+    \item Open to find new ways of working and thinking outside the box
+\end{itemize}
+}
+\medskip
+\cvitem{%\faInfoCircle \, 
+Continually keeping up-to-date with current industry and academic developments}{
+\begin{itemize}
+    \item Collaboration with academia and industry consultants in research projects, workshops, seminars and conferences to embrace new developments
+    \item Committed to learning new technologies and self-developments
+    \item Certification in Microsoft Azure and AWS
+\end{itemize}
+}
+
 
 %%                PROFESSIONAL EXPERIENCES
 
-\section{Professional Experiences}
-\cventry{2019--Present}{Employment and Social Development Canada}{Analyst}{}{Ottawa -- Gatineau}{}
+\section{Professional Experience}
+\cventry{\textbf{Ottawa -- Gatineau, Canada}}{\textbf{Employment and Social Development Canada}}{Data Analyst}{\textbf{2019 -- Present}}{}{}
 \begin{itemize}
-    \item Evaluated heterogeneous treatment effects with causal machine learning forests at the individual, group and overall levels
-    \item Presented on the uses of Machine Learning for labour market program evaluation, which involved a review of the methodological literature, data preparation, and analysis
-    \item Effectively transformed numerical results into intuitive graphics and concise descriptions in evaluation reports and presentations
+    \item Acted as a subject matter expert in the areas of data science, big data, and incorporating new technologies with existing infrastructures
+    \item Applied, adapted and designed R programs for statistical analysis of heterogeneous treatment effects with ML methods (RFs and NNs) at the individual, group and overall levels
+    \item Proposed data visualization techniques to present the results of Program Evaluations, which involves a literature review, data ETL, and statistical analyses
+    \item Delivered detailed documentations, hands-on tutorials and demo to economists on key tools and ML analytic approaches to improve efficiencies
 \end{itemize}
-\smallskip
-\faBook \, \textbf{Project: Horizontal 3\textsuperscript{rd} Cycle Evaluation of the Labour Market Development Agreements}
-\begin{itemize}
-    \item[]\begin{itemize}
-        \item Successfully implemented Machine Learning techniques to build alternative comparison groups for evaluating the effectiveness of labour programs (e.g. Career Focus, Gender-Based Employability Skills and the Aboriginal Skills Employment Training Strategy)
-        \item Produced in- and post-program outcome estimates, such as employment insurance benefits and social assistance dependence, for individuals participating in labour programs
-        \end{itemize}
-\end{itemize}
-%}
+
 \bigskip
-\cventry{2016--2019}{Bank of Canada}{Research Assistant}{}{Ottawa ON}{}
-\begin{itemize}
-    \item Successfully launched pilot stages of implementing new applications, including visualization software, cloud computation services, and Azure Virtual Machines)
-    \item Succinctly summarized recommendations and advice on research methodologies from technical and non-technical audience 
-    \item Efficiently extracted, transformed, and loaded information from unstructured web-scraped textual data into pipelines
+
+\faBook \, \textbf{Project: Horizontal 3\textsuperscript{rd} Cycle Evaluation of the Labour Market Development Agreements}
+\begin{itemize}%        
+        \item Efficiently designed data-driven nearest neighbour sampling methodology to build alternative comparison groups for evaluating the effectiveness of labour programs
+        \item Competent in understanding business requirements and identifying use cases for the deployment of predictive analytics
+        \item Produced in- and post-program outcome estimates, such as employment insurance benefits and social assistance dependence, for labour program participants
 \end{itemize}
-\smallskip
+        %}
+\bigskip
+
+\cventry{\textbf{Ottawa, Canada}}{\textbf{Bank of Canada}}{Research Assistant -- Data Science}{\textbf{2016 -- 2019}}{}{}
+\begin{itemize}
+    \item Accurately extracted, transformed, and loaded information from unstructured web-scraped textual data into automated pipelines
+    \item Summarized recommendations on research methodologies from technical and non-technical audience 
+    \item Successfully launched data warehousing with Azure to incorporate cloud computing and storage 
+    \item Built positive working relationships with other teams (DSO and ITS) to deliver on commitments
+\end{itemize}
+\bigskip
 \faBook \, \textbf{Project 1: Can Media and Text Analytics Provide Insights into Labour Market Conditions in China?}
 \begin{itemize}
-    \item[]\begin{itemize}
-        \item Creatively operationalized a novel alternative labour market conditions indicator with predictive power was built and verified with statistical, Machine Learning, and time-series econometric techniques
-        \item Carefully Validated the usefulness of proposed index was validated by conducting rolling macroeconomic time series, regression and sentiment analysis
-    \end{itemize}
+    \item Published a novel nowcasting Labour Market Conditions Indicator (LMCI) with NLP, SVM, and machine learning techniques 
+    \item Carefully validated the usefulness of the proposed index (LMCI) by conducting rolling macroeconomic time-series, regression and sentiment analyses
+    \item Enhanced model performances with feature engineering to evaulate accuracy of predictive analytics
 \end{itemize}
-\smallskip
+\bigskip
 \faBook \, \textbf{Project 2: Understanding and Predicting Chinese Monetary Policy}
 \begin{itemize}
-    \item[]\begin{itemize}
-        \item Analytically created a Chinese monetary stance index by analyzing unstructured textual data from both official statements from the government and commercial news articles
-        \item Skillfully engaged and articulated research findings to audience at internal and external workshops, conferences, and seminars
-    \end{itemize}
+    \item Quantatively created a Chinese monetary policy stance index by using unstructured textual data 
+    \item Derived data from official statements from the government and commercial news articles
+    \item Effectively communicated with specialists from other fields to drive innovation and expand departmental capabilities
+    \item Skillfully engaged and articulated research findings to various targeted audiences 
 \end{itemize}
 %}
+
+
 
 % \section{Master thesis}
 % \cvitem{title}{\emph{Title}}
@@ -172,21 +237,28 @@
 %                CONFERENCES
 
 \section{Projects}
-\cventry{2019}{Carleton University}{Face Recognition and Gender Classification with K-Nearest Neighbours (KNN)}{Python}{Ottawa ON}{
-I constructed facial recognition programs with KNN algorithm from scratch to identify the names and gendors of actors/actresses in a subset of the FaceScrub dataset.}
-\cventry{2018}{National Research Council Canada}{Space Weather Forecast}{Python -- Tensorflow}{Ottawa ON}{
-I forecasted observational matrices of magnetograms, the Sun’s magnetic field’s strength and location, with a cGAN model. 
-}
+\cventry{2019}{Carleton University}{Face Recognition and Gender Classification with K-Nearest Neighbours}{Python}{Ottawa ON}{}
+% I constructed facial recognition programs with KNN algorithm from scratch to identify the names and gendors of actors/actresses in a subset of the FaceScrub dataset  
+
+\medskip
+\cventry{2019}{Carleton University}{Analysis of Trump Tweets with NLTK and LDA}{Python}{Ottawa ON}{}
+% I evaluated the impacts of U.S. president Trump’s tweets with time-series and NLP topic algorithms
+
+\medskip
+\cventry{2018}{National Research Council Canada}{Space Weather Forecast with conditional Generative Advarsarial NN}{Python -- Tensorflow}{Ottawa ON}{}
+% I forecasted observational matrices of magnetograms, the Sun’s magnetic field’s strength and location, with a cGAN model
 
 
-\section{Conferences}
-\cventry{2019}{Banf BC}{53\textsuperscript{rd} Annual Canadian Economics Association Conference}{}{}{
-Bank of Canada: Textual Analysis of Central Bank Communications / Banque du Canada : Analyse textuelle des communications de la banque centrale
-}
-\cventry{2018}{Montreal QC}{52\textsuperscript{nd} Annual Canadian Economics Association Conference}{}{}{
-Bank of Canada: Big Data and Machine Learning / Banque du Canada : Mégadonnées et apprentissage automatique
-}
 
+% \section{Conferences}
+% \cventry{2019}{Banf BC}{53\textsuperscript{rd} Annual Canadian Economics Association Conference}{}{}{
+% Bank of Canada: Textual Analysis of Central Bank Communications / Banque du Canada : Analyse textuelle des communications de la banque centrale
+% }
+% \cventry{2018}{Montreal QC}{52\textsuperscript{nd} Annual Canadian Economics Association Conference}{}{}{
+% Bank of Canada: Big Data and Machine Learning / Banque du Canada : Mégadonnées et apprentissage automatique
+% }
+
+\bigskip
 
 %%                EDUCATION
 \section{Education}
@@ -196,11 +268,6 @@ Bank of Canada: Big Data and Machine Learning / Banque du Canada : Mégadonnées
 \cventry{2013 - 2017}{University of Ottawa}{Joint Honours Bachelor's in Mathematics and Economics}{}{Ottawa ON}{
 % Courses: modelling disease ecology, regression analysis, ultra-high dimensional space, sampling methodology
 }
-
-
-
-
-
 
 
 %                CERTIFICATES
